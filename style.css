@@ -1,0 +1,90 @@
+*{
+    padding:0;
+    margin: 0;
+    /* border: 1px red solid; */
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+header #title{
+    font-size: 3rem;
+    color: white; 
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.citySearch{
+    width: 20%;
+    background: rgb(216, 214, 214);
+    padding: 10px;
+}
+
+.citySearch input{
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding:5px;
+    width: 80%;
+}
+
+.citySearch button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: 1px grey solid;
+    font-size: 0.8rem;
+}
+
+#displayContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#mainDisplay{
+    margin: 10px;
+}
+
+#current{
+    border: 1px solid grey;
+    border-radius: 5px;
+    max-width: 50%;
+    background-color: aquamarine;
+}
+
+#mainDisplay p{
+    margin: 10px;
+}
+
+#forecastDisplay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 70%;
+}
+
+.forecast{
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
+    background-color: rgb(97, 156, 245);
+    color: white;
+    border-radius: 5px;
+}
+
+.forecast div {
+    margin: 10px;
+}

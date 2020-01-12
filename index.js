@@ -14,10 +14,11 @@ var conditionArray = [];
 var historyObject = {
     historyArray: [],
 };
+var uvIndex = []; 
 
 function generateHistory(){
     for( var i = 0; i < historyObject.historyArray.length; i++){
-        var searchHistory = $(`<button class="history" value="x" data-location="${historyObject.historyArray[i]}">${historyObject.historyArray[i]}</button><br>`);
+        var searchHistory = $(`<button class="history" data-location="${historyObject.historyArray[i]}">${historyObject.historyArray[i]}</button><br>`);
         $("#historyList").append(searchHistory);
     }
 };
@@ -66,7 +67,6 @@ function generateCurrentCard(location){
     url: `https://api.openweathermap.org/data/2.5/weather?q=${location}&mode=JSON&units=imperial&APPID=9c5c1b3cee6e10229e2b0a0786d075e1`,
     method: "GET"
   }).then(function(response) {
-      //set API data to an object
       var image = getWeatherImage(response.weather[0].main);
       var currentWeather = {
         City: response.name,
@@ -76,6 +76,7 @@ function generateCurrentCard(location){
         Low: response.main.temp_min +"°F",
         'Wind Speed': response.wind.speed +"MPH",
         Humidity: response.main.humidity +"%",
+        UV: response.main.uvIndex,
       }
       new CurrentWeatherDisplay(currentWeather);
   });
@@ -86,7 +87,6 @@ function generate5DayCard(location){
     url: `https://api.openweathermap.org/data/2.5/forecast?q=${location}&mode=JSON&units=imperial&appid=9c5c1b3cee6e10229e2b0a0786d075e1`,
     method: "GET"
   }).then(function(response) {
-    //set API data to an object
     response.list.forEach( function(e, i){
         var weatherDay = response.list[i].dt_txt.substr(0,10)
         if(day1 === weatherDay){
@@ -94,7 +94,7 @@ function generate5DayCard(location){
             if (temp > day1Temp || undefined === day1Temp){
                 day1Temp = temp
                 day1humid = response.list[i].main.humidity;
-                day1condition = response.list[i].weather[0].main;                
+                day1condition = response.list[i].weather[0].main;                               
             } 
         }
         else if(day2 === weatherDay){
@@ -146,16 +146,11 @@ function generate5DayCard(location){
   });
 };
 
-//Constructor function
 function CurrentWeatherDisplay(obj){
-    //Removes any existing #current
     $("#current").remove();
-    //Creates div#current
     var main = $(`<div id="current">`);
     main.append(`<p>${currentDay}</p>`);
-    //Cycles through obj passed in as function
     for (const key in obj) {
-        //Creates new <p> with obj key and value
         var k= $(`<p>${[key]}: ${obj[key]}</p>`);
         main.append(k)
     }

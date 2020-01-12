@@ -11,3 +11,6 @@ so that I can plan a trip accordingly.
 The OpenWeather API from https://openweathermap.org/api was used for the calls to generate the weather information. 
 
 ## Screenshots ##
+
+![openingpage](assets/openingpage.PNG)
+![searchedcity](assets/searchedcity.PNG)

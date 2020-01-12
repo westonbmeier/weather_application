@@ -1,16 +1,18 @@
 *{
     padding:0;
     margin: 0;
-    /* border: 1px red solid; */
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+
 
 header{
     display:flex;
     justify-content: center;
     align-items: center;
     background-color: grey;
+    padding-bottom: 5px;
 }
 
 header #title{
@@ -27,8 +29,9 @@ header #title{
 
 .citySearch{
     width: 20%;
-    background: rgb(216, 214, 214);
+    background: white;
     padding: 10px;
+    margin-left: 60px;
 }
 
 .citySearch input{

@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/9eb8d4181d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <title>Weather Application</title>
 </head>
+
 <body>
     <header>
-        <div id="title">
-            Weather Application
-        </div>
+        <div class="mainContainer">
+            <div id="title">
+                Weather Application
+            </div>
     </header>
     <div class="container">
         <div class="citySearch">
             City Search: <br>
             <form id="input-form">
-                <input type="text" id="location"/>
-                <button type="submit" id="submitBtn"><i class="fas fa-search"></i></button>    
+                <input type="text" id="location" />
+                <button type="submit" id="submitBtn"><i class="fas fa-search"></i></button>
             </form>
             <div class="" id="historyList"></div>
         </div>
         <div id="displayContainer">
             <div id="mainDisplay"></div>
-            <div id="forecastDisplay"></div>    
+            <div id="forecastDisplay"></div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
